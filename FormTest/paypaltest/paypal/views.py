@@ -8,12 +8,15 @@ def pay(request):
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
             # ...
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
-            sender = form.cleaned_data['sender']
-            cc_myself = form.cleaned_data['cc_myself']
+            cardtype = form.cleaned_data['cardtype']
+            number = form.cleaned_data['number']
+            expire_month = form.cleaned_data['expire_month']
+            expire_year = form.cleaned_data['expire_year']
+            cvv2 = form.cleaned_data['cvv2']
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
 
-            print subject
+            # print cardtype
 
             return HttpResponseRedirect('/thanks/') # Redirect after POST
     else:
